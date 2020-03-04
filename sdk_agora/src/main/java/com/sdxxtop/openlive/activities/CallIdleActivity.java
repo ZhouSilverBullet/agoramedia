@@ -193,7 +193,7 @@ public class CallIdleActivity extends BaseActivity {
     }
 
     private void getRtcToken() {
-        Observable<RequestBean<RtcRequestBean>> observable = RetrofitHelper.getWapApi().postAudioRtc(String.valueOf(getToUserId()));
+        Observable<RequestBean<RtcRequestBean>> observable = RetrofitHelper.getApi().postAudioRtc(String.valueOf(getToUserId()));
         Disposable disposable = RxUtils.handleDataHttp(observable, new IRequestCallback<RtcRequestBean>() {
             @Override
             public void onSuccess(RtcRequestBean bean) {
