@@ -1,0 +1,182 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.sdxxtop.openlive.ui.VideoGridContainer
+        android:id="@+id/live_video_grid_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:fitsSystemWindows="true"
+        android:clipToPadding="true"
+        android:id="@+id/live_room_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/live_top_layout_height"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:layout_width="@dimen/live_leave_btn_size"
+            android:layout_height="@dimen/live_leave_btn_size"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="6dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/live_top_layout_margin"
+            android:layout_marginEnd="@dimen/live_top_layout_margin"
+            android:src="@drawable/btn_leave"
+            android:scaleType="centerCrop"
+            android:background="@drawable/rounded_bg_half_transparent"
+            android:onClick="onLeaveClicked" />
+
+        <RelativeLayout
+            android:id="@+id/live_name_space_layout"
+            android:visibility="gone"
+            android:layout_width="@dimen/live_name_board_width"
+            android:layout_height="@dimen/live_name_board_height"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/live_top_layout_margin"
+            android:layout_marginStart="@dimen/live_top_layout_margin"
+            android:background="@drawable/live_name_board_bg">
+
+            <ImageView
+                android:id="@+id/live_name_board_icon"
+                android:layout_width="@dimen/live_name_board_icon_size"
+                android:layout_height="@dimen/live_name_board_icon_size"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/live_name_board_icon_margin"
+                android:layout_marginStart="@dimen/live_name_board_icon_margin"
+                android:layout_centerVertical="true"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/fav_icon"
+                android:layout_width="@dimen/live_name_board_fav_icon_size"
+                android:layout_height="@dimen/live_name_board_fav_icon_size"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/live_name_board_fav_icon_margin"
+                android:layout_marginStart="@dimen/live_name_board_fav_icon_margin"
+                android:layout_marginRight="@dimen/live_name_board_fav_icon_margin"
+                android:layout_marginEnd="@dimen/live_name_board_fav_icon_margin"
+                android:src="@drawable/ic_fav"
+                android:background="@drawable/live_name_board_fav_bg" />
+
+            <TextView
+                android:id="@+id/live_room_name"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/live_name_text_height"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@id/live_name_board_icon"
+                android:layout_toEndOf="@id/live_name_board_icon"
+                android:layout_toLeftOf="@id/fav_icon"
+                android:layout_toStartOf="@id/fav_icon"
+                android:layout_marginLeft="@dimen/live_name_text_margin_left"
+                android:layout_marginStart="@dimen/live_name_text_margin_left"
+                android:textAlignment="gravity"
+                android:gravity="bottom"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_medium"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true" />
+
+            <TextView
+                android:id="@+id/live_room_broadcaster_uid"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/live_name_text_height"
+                android:layout_toRightOf="@id/live_name_board_icon"
+                android:layout_toEndOf="@id/live_name_board_icon"
+                android:layout_below="@id/live_room_name"
+                android:layout_toLeftOf="@id/fav_icon"
+                android:layout_toStartOf="@id/fav_icon"
+                android:layout_marginLeft="@dimen/live_name_text_margin_left"
+                android:layout_marginStart="@dimen/live_name_text_margin_left"
+                android:textAlignment="gravity"
+                android:gravity="top"
+                android:text="@string/fake_user_name"
+                android:textColor="@color/gray_lightest"
+                android:textSize="@dimen/text_size_small" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/live_bottom_layout_margin"
+        android:layout_marginStart="@dimen/live_bottom_layout_margin"
+        android:layout_marginRight="@dimen/live_bottom_layout_margin"
+        android:layout_marginEnd="@dimen/live_bottom_layout_margin"
+        android:paddingBottom="@dimen/live_bottom_layout_margin">
+
+        <ImageView
+            android:id="@+id/live_btn_switch_camera"
+            android:layout_width="@dimen/live_bottom_btn_size"
+            android:layout_height="@dimen/live_bottom_btn_size"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/btn_switch_camera"
+            android:scaleType="centerCrop"
+            android:background="@drawable/rounded_bg_full_transparent"
+            android:onClick="onSwitchCameraClicked" />
+
+
+        <ImageView
+            android:id="@+id/live_btn_mute_audio"
+            android:layout_width="@dimen/live_bottom_btn_size"
+            android:layout_height="@dimen/live_bottom_btn_size"
+            android:layout_toRightOf="@id/live_btn_switch_camera"
+            android:layout_toEndOf="@id/live_btn_switch_camera"
+            android:layout_marginLeft="@dimen/live_bottom_btn_margin"
+            android:layout_marginStart="@dimen/live_bottom_btn_margin"
+            android:layout_centerVertical="true"
+            android:src="@drawable/btn_mute_audio"
+            android:scaleType="centerCrop"
+            android:background="@drawable/rounded_bg_full_transparent"
+            android:onClick="onMuteAudioClicked" />
+
+        <RelativeLayout
+            android:id="@+id/rl_et_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:background="@color/transparent"
+            android:paddingLeft="15dp"
+            android:paddingRight="10dp">
+
+            <EditText
+                android:id="@+id/et_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="7dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="7dp"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:background="@drawable/et_messge_background"
+                android:imeOptions="actionSend" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="300dp"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:layout_height="200dp" />
+
+</FrameLayout>

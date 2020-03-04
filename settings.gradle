@@ -1,0 +1,2 @@
+rootProject.name='agoramedia'
+include ':app', ':sdk_agora'
