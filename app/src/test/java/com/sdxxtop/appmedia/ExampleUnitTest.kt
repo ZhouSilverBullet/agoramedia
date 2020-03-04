@@ -1,4 +1,4 @@
-package com.sdxxtop.media
+package com.sdxxtop.appmedia
 
 import org.junit.Test
 

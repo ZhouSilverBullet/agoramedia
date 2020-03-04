@@ -1,4 +1,4 @@
-package com.sdxxtop.media
+package com.sdxxtop.appmedia
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
