@@ -108,6 +108,8 @@ class LoginActivity : AppCompatActivity(), IRequestCallback<LoginBean?>, Handler
 
     override fun onFailure(code: Int, error: String?) {
         showToast(error ?: "")
+        //暂时进入
+        onSuccess(null)
     }
 
     override fun handleMessage(msg: Message): Boolean {

@@ -3,7 +3,6 @@ package com.sdxxtop.guardianapp.model.http.api;
 
 import com.sdxxtop.guardianapp.model.bean.AutoLoginBean;
 import com.sdxxtop.guardianapp.model.bean.LoginBean;
-import com.sdxxtop.guardianapp.model.bean.NewsBean;
 import com.sdxxtop.guardianapp.model.bean.RequestBean;
 import com.sdxxtop.guardianapp.model.bean.RtcRequestBean;
 
@@ -14,16 +13,6 @@ import retrofit2.http.POST;
 
 public interface ApiService {
     String BASE_URL = "http://envir.test.sdxxtop.com/api/";
-
-    @FormUrlEncoded
-    @POST("app/init")
-    Observable<RequestBean> getZhiDian(@Field("data") String data);
-
-    //////////首页/////////
-
-    @FormUrlEncoded
-    @POST("app/index")
-    Observable<RequestBean<NewsBean>> postIndex(@Field("data") String data);
 
     //////////首页/////////
     @FormUrlEncoded

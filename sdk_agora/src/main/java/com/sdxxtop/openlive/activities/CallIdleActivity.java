@@ -2,10 +2,8 @@ package com.sdxxtop.openlive.activities;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.WallpaperManager;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,11 +12,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.sdxxtop.guardianapp.model.bean.AuthDataBean;
 import com.sdxxtop.guardianapp.model.bean.RequestBean;
 import com.sdxxtop.guardianapp.model.bean.RtcRequestBean;
 import com.sdxxtop.guardianapp.model.http.callback.IRequestCallback;
-import com.sdxxtop.guardianapp.model.http.net.Params;
 import com.sdxxtop.guardianapp.model.http.net.RetrofitHelper;
 import com.sdxxtop.guardianapp.model.http.util.RxUtils;
 import com.sdxxtop.imagora.rtmtutorial.AgoraIMConfig;
